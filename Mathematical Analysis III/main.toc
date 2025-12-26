@@ -1,0 +1,6 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Parametric Integral}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Parametric Definite Integral}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}The definition of parametric definite integral}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}The sufficient condition for I(x) to be continuous}{1}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}The Integrability of Parametric Define Integral}{2}{subsection.1.1.3}%

@@ -1,0 +1,105 @@
+\chapter{Parametric Integral}
+
+\section{Parametric Definite Integral}
+
+\subsection{The definition of parametric definite integral}
+
+\begin{definition}
+    The function $f(x)$ is defined on $[a,b]\times [c,d]$. If $\forall x \in [a,b]$, the define integral $\displaystyle \int_{c}^{d}{f(x,y)}\,\mathrm{d}y$ exists, then it defines a function:
+	$$
+	I(x)=\int_{c}^{d}{f(x,y)}\,\mathrm{d}y
+	$$
+	We call $I(x)$ the \textbf{parametric define integral}, and call $x$ the \textbf{parameter}.
+\end{definition}
+
+Define integral is a process of limit. Hence research on it is \textbf{similar} to the function series. The question we are concerned with is, under what conditions does $I(x)$ to be \textbf{continuous, integrable, and differentiable?}
+
+\subsection{The sufficient condition for I(x) to be continuous}
+
+\begin{theorem}{thm:The sufficient condition for I(x) to be continuous}
+	Suppose that $f(x,y)$ is continuous on $D=[a,b]\times[c,d]$. Then $I(x)$ is continuous on $[a,b]$.\footnote{The theorem can be generalized as follows: Under the assumption of the theorem, $\forall(x,u)\in D$, $I(x,u)=\displaystyle \int_{c}^{u}{f(x,y)}\,\mathrm{d}y$ is continuous on $[a,b]$.}
+\end{theorem}
+
+\begin{proof}
+	We use the uniform continuity of $f(x,y)$ on $D$ to prove the theorem.
+
+	As $f(x,y)$ in continuous on the compact set $D$, it is uniformly continuous on $D$. Hence $\forall \varepsilon>0,\exists\,\delta>0$ such that
+	$$
+	\sqrt[]{ (x_{1}-x_{2})^{2}+(y_{1}-y_{2})^{2} }< \delta \implies |f(x_{1},y_{1})-f(x_{2},y_{2})|< \frac{\varepsilon}{d-c}
+	$$
+	Thus $\forall x \in[a,b]$, we have
+	$$
+	\begin{aligned}
+	|I(x)-I(x_{0})|& =\left|\int_{c}^{d}{f(x,y)-f(x_{0},y)}\,\mathrm{d}y\right|\leq \int_{c}^{d}{|f(x,y)-f(x_{0},y)|}\,\mathrm{d}y\\
+	& <\int_{c}^{d}{\frac{\varepsilon}{d-c}}\,\mathrm{d}y=\varepsilon.\quad \forall x_{0} \in U(x,\delta)
+	\end{aligned}
+	$$
+	This completes the proof.
+ \end{proof}
+
+Under the condition of the theorem above, we have
+$$
+\lim_{ x \to x_{0} } \int_{c}^{d}{f(x,y)}\,\mathrm{d}y=\lim_{ x \to x_{0} } I(x)=I(x_{0})=\int_{c}^{d}{\lim_{ x \to x_{0} } f(x,y)}\,\mathrm{d}y
+$$
+Hence \textbf{the continuity of $I(x)$ can be interpreted as the changeability between limit operation and integral operation.}
+
+By the theorem of transforming double integrals into iterated integrals, we have:
+
+\begin{theorem}\label{thm:integral theorem}
+	Suppose $f(x,y)$ in continuous on $D=[a,b]\times[c,d]$. Then $\displaystyle I_{1}(x)=\int_{c}^{d}{f(x,y)}\,\mathrm{d}y$ and $I_{2}(y)=\displaystyle \int_{a}^{b}{f(x,y)}\,\mathrm{d}x$ are integrable on $[a,b],[c,d]$ respectively, and
+	$$
+	\int_{a}^{b}{I_{1}(x)}\,\mathrm{d}x=\int_{c}^{d}{I_{2}(y)}\,\mathrm{d}y
+	$$
+\end{theorem}
+
+The theorem states that under the condition of the theorem, integral operations can be changed.
+$$
+\int_{a}^{b}{}\,\mathrm{d}x\int_{c}^{d}{f(x,y)}\,\mathrm{d}y=\int_{c}^{d}{}\,\mathrm{d}y\int_{a}^{b}{f(x,y)}\,\mathrm{d}x
+$$
+
+\subsection{The Integrability of Parametric Define Integral}
+
+\begin{theorem}\label{thm:The Integrability of Parametric Define Integral}
+	Suppose $f(x,y)$ and its partial derivative $f'_{x}(x,y)$ is continuous on $D=[a,b]\times[c,d]$. Then $I(x)=\displaystyle \int_{c}^{d}{f(x,y)}\,\mathrm{d}y$ is differentiable on $[a,b]$ and
+	$$
+	I'(x)=\int_{c}^{d}{f'_{x}(x,y)}\,\mathrm{d}y.
+	$$
+\end{theorem}
+
+\begin{proof}
+	By the theorem~\ref{thm:The sufficient condition for I(x) to be continuous}, $g(x)=\displaystyle \int_{c}^{d}{f'_{x}(x,y)}\,\mathrm{d}y$ is continuous on $[a,b]$. Thus we have
+	$$
+	\begin{aligned}
+	\int_{a}^{x}{g(u)}\,\mathrm{d}u& =\int_{a}^{x}{}\,\mathrm{d}u\int_{c}^{d}{f'_{u}(u,y)}\,\mathrm{d}y=\int_{c}^{d}{}\,\mathrm{d}y\int_{a}^{x}{f'_{u}(u,y)}\,\mathrm{d}x\\
+	& =\int_{c}^{d}{[f(x,y)-f(a,y)]}\,\mathrm{d}y=I(x)-I(a)
+	\end{aligned}
+	$$
+	Therefore $g(x)=I'(x)$. This completes the proof.
+\end{proof}
+
+\textbf{The differentiability means the changeability between differential and integral.}
+
+The theorem can be generalized as follows
+
+\begin{theorem}
+	Suppose $f(x,y),f'_{x}(x,y)$ are continuous on $D$ and $\varphi(x)$ is a function defined on $[a,b]$ that $c\leq \varphi(x)\leq d$. Then $I(x)=\displaystyle \int_{c}^{\varphi(x)}{f(x,y)}\,\mathrm{d}y$ is differentiable and
+	$$
+	I'(x)=\int_{c}^{\varphi(x)}{f'_{x}(x,y)}\,\mathrm{d}y+f(x,\varphi(x))\varphi'(x)
+	$$
+\end{theorem}
+
+\begin{proof}
+	Let $u=\varphi(x)$. Then $I(x)=F(x,u)=\displaystyle \int_{c}^{u}{f(x,y)}\,\mathrm{d}y$. Take the partial derivative of $F$ with respect to $x$
+	$$
+	\frac{\partial F(x,u)}{\partial x}=\int_{c}^{u}{f'_{x}(x,y)}\,\mathrm{d}y
+	$$
+	As $f'_{x}(x,y)$ is continuous on $D$, $\displaystyle \frac{\partial F(x,u)}{\partial x}$ is continuous on $[a,b]$. Similarly
+	$$
+	\frac{\partial F(x,u)}{\partial u}=f(x,u)\text{ is continuous on }[c,d]
+	$$
+	That is the two partial derivatives of $F$ are both continuous. Hence
+	$$
+	I'(x)= \frac{\partial F(x,u)}{\partial x}+ \frac{\partial F(x,u)}{\partial u}\cdot \frac{\partial u}{\partial x}
+	$$
+	This completes the proof.
+\end{proof}

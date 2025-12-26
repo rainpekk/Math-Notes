@@ -1,0 +1,65 @@
+% =========================
+% header.tex. Math Notes. Qingzhou Zhang
+% =========================
+
+% ========================
+% \documentclass[12pt]{book}
+
+% \input{header}
+
+% \begin{document}
+
+% \frontmatter
+% \tableofcontents
+
+% \mainmatter
+
+% \input{chapters/chapter1}
+% \input{chapters/chapter2}
+% \input{chapters/chapter3}
+
+% \end{document}
+% ========================
+
+
+% ---------- Language ----------
+\usepackage[english]{babel}
+
+% ---------- Page Layout ----------
+\usepackage[a4paper,margin=1in]{geometry}
+
+% ---------- Math Packages ----------
+\usepackage{amsmath, amssymb, amsthm}
+
+% ---------- Hyperlinks ----------
+\usepackage[
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+]{hyperref}
+
+% ---------- Theorem Environments ----------
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+% proof 环境由 amsthm 自动提供
+
+% ---------- Numbering ----------
+\numberwithin{equation}{chapter}
+
+% ---------- Common Math Commands ----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
